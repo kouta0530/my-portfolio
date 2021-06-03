@@ -6,20 +6,29 @@ import "./style.scss";
 type ContactPrams = {
   contactHeaderTitle: String;
   contentIcons: IconParameter[];
-  contentText: String;
+  contentText: String[];
 };
 
 export default class PortfolioContact extends React.Component<ContactPrams> {
   render() {
     return (
       <>
-        <div className="contact-title">
-          <Typography variant="h4">{this.props.contactHeaderTitle}</Typography>
-        </div>
-        <div className="content-icons">
-          {this.props.contentIcons.map((e) => (
-            <img src={e.iconImagePath} alt={e.iconName} />
-          ))}
+        <div className="content">
+          <div className="contact-title">
+            <Typography variant="h4">
+              {this.props.contactHeaderTitle}
+            </Typography>
+          </div>
+          <div className="content-icons">
+            {this.props.contentIcons.map((e) => (
+              <img src={e.iconImagePath} alt={e.iconName} />
+            ))}
+          </div>
+          <div className="content-texts">
+            {this.props.contentText.map((e) => (
+              <p>{e}</p>
+            ))}
+          </div>
         </div>
       </>
     );
