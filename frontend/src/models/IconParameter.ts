@@ -1,5 +1,5 @@
 export default interface IconParameter {
-  iconName: String;
-  contentUrl: String | "";
-  iconImagePath: String;
+  iconName: string;
+  contentUrl: string | "";
+  iconImagePath: string;
 }
