@@ -25,7 +25,7 @@ type ContactPrams = {
 const mockContentIcons = [
   {
     iconName: "test",
-    contentUrl: "",
+    contentUrl: "https://github.com/kouta0530",
     iconImagePath: "./logo192.png",
   },
   {
