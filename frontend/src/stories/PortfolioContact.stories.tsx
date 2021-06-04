@@ -7,8 +7,11 @@ export default {
   component: PortfolioContact,
   argTypes: {
     contactHeaderTitle: { control: "text" },
-    contactIcons: {
+    contentIcons: {
       types: "array",
+    },
+    contentText: {
+      control: "array",
     },
   },
 } as Meta;
@@ -43,4 +46,17 @@ Default.args = {
   contactHeaderTitle: "TestContactTitle",
   contentIcons: mockContentIcons,
   contentText: mockContentText,
+};
+
+export const Title = Template.bind({});
+Title.args = {
+  contactHeaderTitle: "TestContactTitle",
+  contentIcons: [],
+  contentText: [],
+};
+
+export const Icons = Template.bind({});
+Icons.args = {
+  contentIcons: mockContentIcons,
+  contentText: [],
 };
