@@ -16,7 +16,7 @@ export default {
 type ContactPrams = {
   contactHeaderTitle: String;
   contentIcons: IconParameter[];
-  contentText: String;
+  contentText: String[];
 };
 
 const mockContentIcons = [
@@ -32,6 +32,8 @@ const mockContentIcons = [
   },
 ];
 
+const mockContentText = ["test@example.com"];
+
 const Template: Story<ContactPrams> = (args) => (
   <PortfolioContact {...args}> /</PortfolioContact>
 );
@@ -40,4 +42,5 @@ export const Default = Template.bind({});
 Default.args = {
   contactHeaderTitle: "TestContactTitle",
   contentIcons: mockContentIcons,
+  contentText: mockContentText,
 };
