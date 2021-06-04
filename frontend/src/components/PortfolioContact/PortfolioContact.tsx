@@ -21,7 +21,9 @@ export default class PortfolioContact extends React.Component<ContactPrams> {
           </div>
           <div className="content-icons">
             {this.props.contentIcons.map((e) => (
-              <img src={e.iconImagePath} alt={e.iconName} />
+              <a href={e.contentUrl}>
+                <img src={e.iconImagePath} alt={e.iconName} />
+              </a>
             ))}
           </div>
           <div className="content-texts">
