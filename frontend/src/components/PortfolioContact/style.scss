@@ -1,0 +1,21 @@
+.contact-title {
+  margin: 0 auto;
+  width: 50%;
+}
+.content {
+  width: 500px;
+  margin: 0 auto;
+  padding: 10px 0;
+
+  .content-icons {
+    display: flex;
+    justify-content: center;
+
+    img {
+      margin: 1.2em;
+    }
+  }
+  .content-texts {
+    text-align: center;
+  }
+}
