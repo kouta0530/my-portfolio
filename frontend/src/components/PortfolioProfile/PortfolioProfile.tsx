@@ -1,6 +1,7 @@
 import React from "react";
 import IconParameter from "../../models/IconParameter";
 import HobbyParameter from "../../models/HobbyParameter";
+import "./style.scss";
 
 export interface ProfileProps {
   myPicture?: IconParameter;
@@ -11,18 +12,22 @@ export interface ProfileProps {
 export const PortfolioProfile: React.FC<ProfileProps> = ({ ...props }) => {
   return (
     <>
-      <div>
+      <div className="profile">
         <img
           src={props.myPicture?.iconImagePath}
           alt={props.myPicture?.iconName}
         ></img>
-        <div>
+        <div className="profile-info">
           <h3>{props.myName}</h3>
-          <div>
+          <div className="profile-info-hobbies">
             {props.myHobbyList?.map((e) => (
               <>
                 <h4>{e.hobbyName}</h4>
-                <div>{e.hobbiesExampleInformation}</div>
+                <ul>
+                  {e.hobbiesExampleInformation.map((e) => (
+                    <li>{e}</li>
+                  ))}
+                </ul>
               </>
             ))}
           </div>
