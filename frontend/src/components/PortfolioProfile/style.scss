@@ -5,18 +5,25 @@
     margin: auto 10px;
     padding: 10px;
   }
+  &-info {
+    width: 500px;
 
-  &-info-hobbies {
-    margin-left: 20px;
-    &-example {
-      display: none;
-      li {
-        display: block;
-      }
+    h3 {
+      margin-left: 10px;
     }
 
-    &:hover + &-example {
-      display: block;
+    &-hobbies {
+      margin-left: 20px;
+      &-example {
+        display: none;
+        li {
+          display: block;
+        }
+      }
+
+      &:hover + &-example {
+        display: block;
+      }
     }
   }
 }

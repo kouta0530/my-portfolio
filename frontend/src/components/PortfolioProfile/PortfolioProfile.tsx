@@ -2,6 +2,7 @@ import React from "react";
 import IconParameter from "../../models/IconParameter";
 import HobbyParameter from "../../models/HobbyParameter";
 import Avatar from "@material-ui/core/Avatar";
+import Paper from "@material-ui/core/Paper";
 import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
 import "./style.scss";
 
@@ -14,8 +15,8 @@ export interface ProfileProps {
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     large: {
-      width: theme.spacing(7),
-      height: theme.spacing(7),
+      width: theme.spacing(10),
+      height: theme.spacing(10),
     },
   })
 );
@@ -32,7 +33,7 @@ export const PortfolioProfile: React.FC<ProfileProps> = ({ ...props }) => {
             className={classes.large}
           ></Avatar>
         </div>
-        <div className="profile-info">
+        <Paper className="profile-info">
           <h3>{props.myName}</h3>
           <div>
             {props.myHobbyList?.map((e) => (
@@ -48,7 +49,7 @@ export const PortfolioProfile: React.FC<ProfileProps> = ({ ...props }) => {
               </>
             ))}
           </div>
-        </div>
+        </Paper>
       </div>
     </>
   );
