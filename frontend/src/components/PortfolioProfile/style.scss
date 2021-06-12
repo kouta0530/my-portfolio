@@ -1,7 +1,22 @@
 .profile {
   display: flex;
 
-  img {
-    margin: 0 10px;
+  &-avatar {
+    margin: auto 10px;
+    padding: 10px;
+  }
+
+  &-info-hobbies {
+    margin-left: 20px;
+    &-example {
+      display: none;
+      li {
+        display: block;
+      }
+    }
+
+    &:hover + &-example {
+      display: block;
+    }
   }
 }
