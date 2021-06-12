@@ -1,0 +1,29 @@
+.profile {
+  display: flex;
+
+  &-avatar {
+    margin: auto 10px;
+    padding: 10px;
+  }
+  &-info {
+    width: 500px;
+
+    h3 {
+      margin-left: 10px;
+    }
+
+    &-hobbies {
+      margin-left: 20px;
+      &-example {
+        display: none;
+        li {
+          display: block;
+        }
+      }
+
+      &:hover + &-example {
+        display: block;
+      }
+    }
+  }
+}
