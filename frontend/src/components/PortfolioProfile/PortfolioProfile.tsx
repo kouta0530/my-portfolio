@@ -1,6 +1,8 @@
 import React from "react";
 import IconParameter from "../../models/IconParameter";
 import HobbyParameter from "../../models/HobbyParameter";
+import Avatar from "@material-ui/core/Avatar";
+import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
 import "./style.scss";
 
 export interface ProfileProps {
@@ -9,25 +11,40 @@ export interface ProfileProps {
   myHobbyList?: HobbyParameter[];
 }
 
+const useStyles = makeStyles((theme: Theme) =>
+  createStyles({
+    large: {
+      width: theme.spacing(7),
+      height: theme.spacing(7),
+    },
+  })
+);
+
 export const PortfolioProfile: React.FC<ProfileProps> = ({ ...props }) => {
+  const classes = useStyles();
+
   return (
     <>
       <div className="profile">
-        <img
-          src={props.myPicture?.iconImagePath}
-          alt={props.myPicture?.iconName}
-        ></img>
+        <div className="profile-avatar">
+          <Avatar
+            src={props.myPicture?.iconImagePath}
+            className={classes.large}
+          ></Avatar>
+        </div>
         <div className="profile-info">
           <h3>{props.myName}</h3>
-          <div className="profile-info-hobbies">
+          <div>
             {props.myHobbyList?.map((e) => (
               <>
-                <h4>{e.hobbyName}</h4>
-                <ul>
-                  {e.hobbiesExampleInformation.map((e) => (
-                    <li>{e}</li>
-                  ))}
-                </ul>
+                <div>
+                  <h4 className="profile-info-hobbies">{e.hobbyName}</h4>
+                  <ul className="profile-info-hobbies-example">
+                    {e.hobbiesExampleInformation.map((e) => (
+                      <li>{e}</li>
+                    ))}
+                  </ul>
+                </div>
               </>
             ))}
           </div>
