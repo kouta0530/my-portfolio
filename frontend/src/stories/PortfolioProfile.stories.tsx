@@ -9,6 +9,17 @@ import HobbyParameter from "../models/HobbyParameter";
 export default {
   title: "Example/PortfolioProfile",
   component: PortfolioProfile,
+  argTypes: {
+    myPicture: {
+      control: "object",
+    },
+    myName: {
+      control: "text",
+    },
+    myHobbyList: {
+      control: "array",
+    },
+  },
 } as Meta;
 
 const Template: Story<ProfileProps> = (args) => <PortfolioProfile {...args} />;
