@@ -29,3 +29,13 @@ ManyStars.args = {
     type: "test",
   },
 };
+
+export const LongLabel = Template.bind({});
+LongLabel.args = {
+  skillInformation: {
+    skillLabel:
+      "veryveryveryveryveryveryveryveryveryveryveryveryveryveryveryverylongveryveryveryveryveryveryveryveryveryveryveryveryveryveryveryverylongLabel",
+    skilledStars: 3,
+    type: "test",
+  },
+};
