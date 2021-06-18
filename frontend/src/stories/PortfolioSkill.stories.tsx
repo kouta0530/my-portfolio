@@ -20,3 +20,12 @@ Default.args = {
     type: "test",
   },
 };
+
+export const ManyStars = Template.bind({});
+ManyStars.args = {
+  skillInformation: {
+    skillLabel: "manyStars",
+    skilledStars: 100,
+    type: "test",
+  },
+};
