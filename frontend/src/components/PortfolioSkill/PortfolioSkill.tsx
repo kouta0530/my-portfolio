@@ -9,16 +9,16 @@ export interface SkillProp {
 
 export const PortfolioSkill: React.FC<SkillProp> = ({ ...props }) => {
   const stars = Array(props.skillInformation.skilledStars).fill(
-    <StarIcon color="primary" />
+    <span className="skilled-star">
+      <StarIcon color="primary" />
+    </span>
   );
 
   return (
     <>
       <div className="skill">
         <label>{props.skillInformation.skillLabel}</label>
-        <div className="skilled-stars">
-          <span className="skilled-star">{stars}</span>
-        </div>
+        <div className="skilled-stars">{stars}</div>
       </div>
     </>
   );

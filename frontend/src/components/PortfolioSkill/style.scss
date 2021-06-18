@@ -1,6 +1,9 @@
 .skill {
   display: flex;
-  .skilled-star {
-    margin: 0 16px;
+  .skilled-stars {
+    margin-left: 16px;
+    .skilled-star {
+      margin-right: 4px;
+    }
   }
 }
