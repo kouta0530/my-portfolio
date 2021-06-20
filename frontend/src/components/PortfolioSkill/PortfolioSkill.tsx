@@ -17,7 +17,9 @@ export const PortfolioSkill: React.FC<SkillProp> = ({ ...props }) => {
   return (
     <>
       <div className="skill">
-        <label>{props.skillInformation.skillLabel}</label>
+        <label>
+          {props.skillInformation.skillLabel.replace(/(.{30}?)/g, "$&\r\n")}
+        </label>
         <div className="skilled-stars">{stars}</div>
       </div>
     </>
