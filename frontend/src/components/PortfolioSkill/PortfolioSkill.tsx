@@ -17,9 +17,18 @@ export const PortfolioSkill: React.FC<SkillProp> = ({ ...props }) => {
   return (
     <>
       <div className="skill">
-        <label>
-          {props.skillInformation.skillLabel.replace(/(.{30}?)/g, "$&\r\n")}
-        </label>
+        <div>
+          {props.skillInformation.skillLabel.length > 20
+            ? props.skillInformation.skillLabel
+                .match(/.{0,20}/g)
+                ?.map((str, idx) => (
+                  <React.Fragment key={idx}>
+                    {str}
+                    <br />
+                  </React.Fragment>
+                ))
+            : props.skillInformation.skillLabel}
+        </div>
         <div className="skilled-stars">{stars}</div>
       </div>
     </>
