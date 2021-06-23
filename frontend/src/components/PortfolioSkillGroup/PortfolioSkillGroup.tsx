@@ -1,17 +1,24 @@
 import React from "react";
-import SkillGroupParameter from "../../models/SkillGroupParameter";
+import SkillParameter from "../../models/SkillParameter";
 import { PortfolioSkill } from "../PortfolioSkill/PortfolioSkill";
 
 export interface SkillGroupProp {
   skillTypes: string[];
-  skillInformation: SkillGroupParameter;
+  skillInformation: SkillParameter[];
 }
 
 export const PortfolioSkillGroup: React.FC<SkillGroupProp> = ({ ...props }) => {
   return (
     <>
-      {props.skillInformation.skillInformationMatchTypesKey.map((e) => (
-        <PortfolioSkill skillInformation={e} />
+      {props.skillTypes.map((skillType) => (
+        <div>
+          <p>{skillType}</p>
+          {props.skillInformation
+            .filter((skill) => skill.type === skillType)
+            .map((s) => (
+              <PortfolioSkill skillInformation={s} />
+            ))}
+        </div>
       ))}
     </>
   );
