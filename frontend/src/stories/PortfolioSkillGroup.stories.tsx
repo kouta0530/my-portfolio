@@ -31,6 +31,23 @@ const mockSkillGroupData = {
   ],
 };
 
+const manyKindsMockData = {
+  skillTypes: [...mockSkillGroupData.skillTypes, "ミドルウェア", "その他"],
+  skillInformation: [
+    ...mockSkillGroupData.skillInformation,
+    {
+      skillLabel: "Apache",
+      skilledStars: 2,
+      type: "ミドルウェア",
+    },
+    {
+      skillLabel: "TOEIC",
+      skilledStars: 3,
+      type: "その他",
+    },
+  ],
+};
+
 const Template: Story<SkillGroupProp> = (args) => (
   <PortfolioSkillGroup {...args} />
 );
@@ -39,3 +56,6 @@ export const Default = Template.bind({});
 Default.args = {
   ...mockSkillGroupData,
 };
+
+export const ManyKindsSkills = Template.bind({});
+ManyKindsSkills.args = { ...manyKindsMockData };
