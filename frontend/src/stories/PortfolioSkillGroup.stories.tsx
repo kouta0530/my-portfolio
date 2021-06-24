@@ -59,3 +59,26 @@ Default.args = {
 
 export const ManyKindsSkills = Template.bind({});
 ManyKindsSkills.args = { ...manyKindsMockData };
+
+export const DiffrentLengthLabel = Template.bind({});
+
+DiffrentLengthLabel.args = {
+  skillTypes: ["test"],
+  skillInformation: [
+    {
+      skillLabel: "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      skilledStars: 2,
+      type: "test",
+    },
+    {
+      skillLabel: "eeeee",
+      skilledStars: 2,
+      type: "test",
+    },
+    {
+      skillLabel: "あああああああああああああああああああああああああ",
+      skilledStars: 2,
+      type: "test",
+    },
+  ],
+};
