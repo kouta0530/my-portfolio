@@ -3,6 +3,7 @@ import {
   PortfolioSkillGroup,
   SkillGroupProp,
 } from "../components/PortfolioSkillGroup/PortfolioSkillGroup";
+import { ManyStars } from "./PortfolioSkill.stories";
 
 export default {
   title: "Example/PortfolioSkillGroup",
@@ -77,6 +78,23 @@ DiffrentLengthLabel.args = {
     },
     {
       skillLabel: "あああああああああああああああああああああああああ",
+      skilledStars: 2,
+      type: "test",
+    },
+  ],
+};
+
+export const ManyStarsCardView = Template.bind({});
+ManyStarsCardView.args = {
+  skillTypes: ["test"],
+  skillInformation: [
+    {
+      skillLabel: "manyStars",
+      skilledStars: 30,
+      type: "test",
+    },
+    {
+      skillLabel: "eeeee",
       skilledStars: 2,
       type: "test",
     },
