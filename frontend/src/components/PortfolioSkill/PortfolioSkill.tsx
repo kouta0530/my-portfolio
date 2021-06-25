@@ -17,10 +17,10 @@ export const PortfolioSkill: React.FC<SkillProp> = ({ ...props }) => {
   return (
     <>
       <div className="skill">
-        <div>
+        <div className="skill-label">
           {props.skillInformation.skillLabel.length > 20
             ? props.skillInformation.skillLabel
-                .match(/.{0,20}/g)
+                .match(/.{0,10}/g)
                 ?.map((str, idx) => (
                   <React.Fragment key={idx}>
                     {str}

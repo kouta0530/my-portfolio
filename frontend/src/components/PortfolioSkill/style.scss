@@ -1,7 +1,11 @@
 .skill {
   display: flex;
+  &-label {
+    max-width: 170px;
+  }
   .skilled-stars {
     margin-left: 16px;
+    width: 100px;
     .skilled-star {
       margin-right: 4px;
     }
