@@ -16,7 +16,11 @@ export const PortfolioSkillGroup: React.FC<SkillGroupProp> = ({ ...props }) => {
         {props.skillTypes.map((skillType) => (
           <Card className="skill-group-card">
             <CardContent>
-              <Typography component="p" className="skill-group-card-label">
+              <Typography
+                component="p"
+                align="center"
+                className="skill-group-card-label"
+              >
                 {skillType}
               </Typography>
               {props.skillInformation
