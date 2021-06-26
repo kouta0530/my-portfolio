@@ -14,9 +14,11 @@ export const PortfolioSkillGroup: React.FC<SkillGroupProp> = ({ ...props }) => {
     <>
       <div className="skill-group">
         {props.skillTypes.map((skillType) => (
-          <Card className="skill">
+          <Card className="skill-group-card">
             <CardContent>
-              <Typography component="p">{skillType}</Typography>
+              <Typography component="p" className="skill-group-card-label">
+                {skillType}
+              </Typography>
               {props.skillInformation
                 .filter((skill) => skill.type === skillType)
                 .map((s) => (

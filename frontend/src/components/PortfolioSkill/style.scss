@@ -1,7 +1,8 @@
 .skill {
   display: flex;
+  margin: 16px;
   &-label {
-    max-width: 170px;
+    width: 120px;
   }
   .skilled-stars {
     margin-left: 16px;
