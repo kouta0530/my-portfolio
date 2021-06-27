@@ -1,0 +1,13 @@
+.skill-group {
+  display: flex;
+  flex-wrap: wrap;
+
+  .skill-group-card {
+    margin: 16px;
+    width: 300px;
+    min-height: 200px;
+    &-label {
+      margin: 16px 0;
+    }
+  }
+}
