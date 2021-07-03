@@ -23,3 +23,12 @@ def getPortfolioSkill(request, id):
     return HttpResponse(
         json.dumps(list(skillInformation), indent=2, ensure_ascii=False),
         content_type="text/json")
+
+
+def getPortfolioSkillListSlectedCategory(request):
+    skillLabelList = Skill.objects.values("skillType").distinct()
+    response = list(map(lambda q: q['skillType'], list(skillLabelList)))
+
+    return HttpResponse(
+        json.dumps(response, indent=2, ensure_ascii=False)
+    )
