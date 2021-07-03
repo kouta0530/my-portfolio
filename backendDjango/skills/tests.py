@@ -7,11 +7,11 @@ from .models import Skill
 
 class SkillsApiTest(TestCase):
 
-    def test_canGetSkillInformationList(self):
+    def test_can_get_skillinformationlist(self):
         reponse = self.client.get('/v1/skills/')
         self.assertEqual(reponse.status_code, 200)
 
-    def test_canGetSkillInformation(self):
+    def test_can_get_skillinformation(self):
         response = self.client.get('/v1/skills/?id=1')
         self.assertEqual(response.status_code, 200)
         skill = Skill.objects.filter(pk=1)

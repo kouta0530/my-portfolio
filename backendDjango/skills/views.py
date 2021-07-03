@@ -6,27 +6,27 @@ from .models import Skill
 import json
 
 
-def getPortfolioSkillList(request):
-    skillInformations = Skill.objects.all().values(
-        'skillLabel', 'skilledStars', 'skillType')
+def get_portfolio_skill_list(request):
+    skill_informations = Skill.objects.all().values(
+        'skill_label', 'skilled_stars', 'skill_type')
 
     return HttpResponse(
-        json.dumps(list(skillInformations), indent=2, ensure_ascii=False),
+        json.dumps(list(skill_informations), indent=2, ensure_ascii=False),
         content_type="text/json"
     )
 
 
-def getPortfolioSkill(request, id):
-    skillInformation = Skill.objects.filter(pk=id).values()
+def get_portfolio_skill(request, id):
+    skill_information = Skill.objects.filter(pk=id).values()
 
     return HttpResponse(
-        json.dumps(skillInformation[0], indent=2, ensure_ascii=False),
+        json.dumps(skill_information[0], indent=2, ensure_ascii=False),
         content_type="text/json")
 
 
-def getPortfolioSkillListSlectedCategory(request):
-    skillLabelList = Skill.objects.values("skillType").distinct()
-    response = list(map(lambda q: q['skillType'], list(skillLabelList)))
+def get_portfolio_skill_list_slected_category(request):
+    skill_label_list = Skill.objects.values("skill_type").distinct()
+    response = list(map(lambda q: q['skill_type'], list(skill_label_list)))
 
     return HttpResponse(
         json.dumps(response, indent=2, ensure_ascii=False)

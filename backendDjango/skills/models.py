@@ -4,9 +4,9 @@ from django.db import models
 
 
 class Skill(models.Model):
-    skillLabel = models.CharField(max_length=200)
-    skilledStars = models.IntegerField(default=1)
-    skillType = models.CharField(max_length=20)
+    skill_label = models.CharField(max_length=200)
+    skilled_stars = models.IntegerField(default=1)
+    skill_type = models.CharField(max_length=20)
 
     def __str__(self):
-        return self.skillLabel
+        return self.skill_label
