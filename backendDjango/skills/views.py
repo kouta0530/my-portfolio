@@ -17,11 +17,10 @@ def getPortfolioSkillList(request):
 
 
 def getPortfolioSkill(request, id):
-    skillInformation = Skill.objects.filter(pk=id).values(
-        'skillLabel', 'skilledStars', 'skillType')
+    skillInformation = Skill.objects.filter(pk=id).values()
 
     return HttpResponse(
-        json.dumps(list(skillInformation), indent=2, ensure_ascii=False),
+        json.dumps(skillInformation[0], indent=2, ensure_ascii=False),
         content_type="text/json")
 
 
