@@ -6,10 +6,14 @@ from .models import Skill
 import json
 
 
-def index(request):
-    skillInformations = Skill.objects.all()
-    response = serializers.serialize('json', skillInformations)
-    return HttpResponse(response, content_type="text/json")
+def getPortfolioSkillList(request):
+    skillInformations = Skill.objects.all().values(
+        'skillLabel', 'skilledStars', 'skillType')
+
+    return HttpResponse(
+        json.dumps(list(skillInformations), indent=2, ensure_ascii=False),
+        content_type="text/json"
+    )
 
 
 def getPortfolioSkill(request, id):
