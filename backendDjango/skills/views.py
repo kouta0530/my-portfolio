@@ -12,7 +12,7 @@ def get_portfolio_skill_list(request):
 
     return HttpResponse(
         json.dumps(list(skill_informations), indent=2, ensure_ascii=False),
-        content_type="text/json"
+        content_type="application/json"
     )
 
 
@@ -21,7 +21,7 @@ def get_portfolio_skill(request, id):
 
     return HttpResponse(
         json.dumps(skill_information[0], indent=2, ensure_ascii=False),
-        content_type="text/json")
+        content_type="application/json")
 
 
 def get_portfolio_skill_list_slected_category(request):
