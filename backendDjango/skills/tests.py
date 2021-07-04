@@ -34,3 +34,8 @@ class SkillsApiTest(TestCase):
     def test_skilled_stars_default(self):
         skill = Skill.objects.create(skill_label="Django", skill_type="バックエンド")
         self.assertEqual(skill.skilled_stars, 1)
+
+    def test_skill_label_check_label(self):
+        skill = Skill.objects.get(pk=1)
+        skill_label = skill._meta.get_field('skill_label').verbose_name
+        self.assertEqual(skill_label, 'skill label')
