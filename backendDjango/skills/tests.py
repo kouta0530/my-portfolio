@@ -11,15 +11,21 @@ class SkillsApiTest(TestCase):
         Skill.objects.create(
             skill_label="Django", skilled_stars=2, skill_type="バックエンド")
 
-    def test_can_get_skillinformationlist(self):
+        Skill.objects.create(
+            skill_label='React', skilled_stars=1, skill_type="フロントエンド")
+
+        Skill.objects.create(
+            skill_label='Vue', skilled_stars=2, skill_type="フロントエンド")
+
+    def test_can_get_skillinformationlist_response(self):
         response = self.client.get('/v1/skills/')
         self.assertEqual(response.status_code, 200)
 
-    def test_can_get_skillinformation(self):
+    def test_can_get_skillinformation_response(self):
         response = self.client.get('/v1/skills/?id=1')
         self.assertEqual(response.status_code, 200)
 
-    def test_can_get_skill_category(self):
+    def test_can_get_skill_category_response(self):
         response = self.client.get('/v1/skills/type')
         self.assertEqual(response.status_code, 200)
 
@@ -61,3 +67,8 @@ class SkillsApiTest(TestCase):
         skill_label_max_length = skill._meta.get_field(
             'skill_type').max_length
         self.assertEqual(skill_label_max_length, 20)
+
+    def test_get_skill_catecory_distinct(self):
+        skill_category = list(map(
+            lambda x: x['skill_type'], Skill.objects.values('skill_type').distinct()))
+        self.assertEqual(skill_category, ['バックエンド', 'フロントエンド'])
