@@ -44,3 +44,8 @@ class SkillsApiTest(TestCase):
         skill = Skill.objects.get(pk=1)
         skilled_stars = skill._meta.get_field('skilled_stars').verbose_name
         self.assertEqual(skilled_stars, 'skilled stars')
+
+    def test_skill_type_check_label(self):
+        skill = Skill.objects.get(pk=1)
+        skilled_stars = skill._meta.get_field('skill_type').verbose_name
+        self.assertEqual(skilled_stars, 'skill type')
