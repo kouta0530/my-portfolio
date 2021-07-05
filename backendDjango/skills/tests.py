@@ -49,3 +49,9 @@ class SkillsApiTest(TestCase):
         skill = Skill.objects.get(pk=1)
         skilled_stars = skill._meta.get_field('skill_type').verbose_name
         self.assertEqual(skilled_stars, 'skill type')
+
+    def test_skill_label_max_length(self):
+        skill = Skill.objects.get(pk=1)
+        skill_label_max_length = skill._meta.get_field(
+            'skill_label').max_length
+        self.assertEqual(skill_label_max_length, 200)
