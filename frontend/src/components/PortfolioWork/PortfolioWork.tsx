@@ -26,7 +26,7 @@ export const PortfolioWork:React.FC<WorkProp> = ({...props}) => {
             {props.applicationDescription}
           </Typography>
           <div className="application-card-options">
-            {props.applicationOptions?.map(e => <Avatar alt= {e.iconName} src={e.iconImagePath} className="avatar-option"/>)}
+            {props.applicationOptions?.slice(0,5).map(e => <Avatar alt= {e.iconName} src={e.iconImagePath} className="avatar-option"/>)}
           </div>
         </CardContent>
       </Card>
