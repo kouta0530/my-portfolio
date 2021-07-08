@@ -26,3 +26,10 @@ Default.args ={
       }
     ]
 }
+
+export const ManyDescription = Template.bind({})
+
+ManyDescription.args = {
+  applicationName:"ManyDescription",
+  applicationDescription: 'eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee'
+}
