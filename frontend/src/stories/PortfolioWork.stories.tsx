@@ -31,5 +31,37 @@ export const ManyDescription = Template.bind({})
 
 ManyDescription.args = {
   applicationName:"ManyDescription",
-  applicationDescription: 'eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee'
+  applicationDescription: 'eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee'
+}
+
+export const ManyOptions = Template.bind({})
+ManyOptions.args = {
+  applicationName: "ManyOptionsTest",
+  applicationOptions: [
+    {
+      iconName:'',
+      contentUrl:'',
+      iconImagePath:'logo192.png'
+    },
+    {
+      iconName:'',
+      contentUrl:'',
+      iconImagePath:'logo192.png'
+    },
+    {
+      iconName:'',
+      contentUrl:'',
+      iconImagePath:'logo192.png'
+    },
+    {
+      iconName:'',
+      contentUrl:'',
+      iconImagePath:'logo192.png'
+    },
+    {
+      iconName:'',
+      contentUrl:'',
+      iconImagePath:'logo192.png'
+    }
+  ]
 }
