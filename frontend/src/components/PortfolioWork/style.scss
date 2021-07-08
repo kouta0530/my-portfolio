@@ -9,7 +9,7 @@
   }
 
   &-description {
-    max-height: 50px;
+    height: 50px;
     width: 250px;
     display: -webkit-box;
     -webkit-line-clamp: 2;
@@ -20,9 +20,9 @@
   &-options {
     margin-top: 16px;
     display: flex;
-
+    max-width: 250px;
     .avatar-option {
-      margin: 0 8px;
+      margin-right: 16px;
     }
   }
 }
