@@ -9,10 +9,13 @@
   }
 
   &-description {
-    height: 50px;
+    max-height: 50px;
     width: 250px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
     overflow: hidden;
-    text-overflow: ellipsis;
+    word-break: break-all;
   }
   &-options {
     margin-top: 16px;
