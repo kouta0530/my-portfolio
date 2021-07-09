@@ -39,3 +39,10 @@ Default.args = {
     createMockApplication('testReactApplication','./logo192.png','これはテスト用の説明です。')
   ]
 }
+
+export const ManyApplications = Template.bind({})
+ManyApplications.args = {
+  applications: new Array<WorkParameter>(6).fill(
+      createMockApplication('thirdApplication','./logo192.png','testSamplaApp',new Array<IconParameter>(2).fill(mockOption))
+  )
+}
