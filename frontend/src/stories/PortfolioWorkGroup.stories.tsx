@@ -8,7 +8,7 @@ export default {
   component: PortfolioWorkGroup
 } as Meta
 
-const createMockApplication　= (
+const createMockApplication = (
   name: string, 
   applicationPictureUrl?: string,
   applicationDescription?: string,
@@ -19,8 +19,14 @@ const createMockApplication　= (
       applicationName: name,
       applicationPictureUrl: applicationPictureUrl,
       applicationDescription: applicationDescription,
-      applicationOptions: applicationOptions
+      applicationIcon: applicationOptions
     } as WorkParameter
+}
+
+const mockOption = {
+  iconName:'',
+  contentUrl:'',
+  iconImagePath:'logo192.png'
 }
 
 const Template: Story<WorkGroupProp> = (args) => <PortfolioWorkGroup {...args} />
@@ -29,7 +35,7 @@ export const Default = Template.bind({})
 
 Default.args = {
   applications:[
-    createMockApplication('testSampleApplication','/images/Screenshot from 2021-06-09 13-20-09.png','これはテスト用の説明です。'),
+    createMockApplication('testSampleApplication','/images/Screenshot from 2021-06-09 13-20-09.png','これはテスト用の説明です。',[mockOption]),
     createMockApplication('testReactApplication','./logo192.png','これはテスト用の説明です。')
   ]
 }
