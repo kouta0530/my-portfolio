@@ -1,5 +1,5 @@
 from django.db import models
-from django.core.validators import RegexValidator
+from django.core.validators import URLValidator
 
 # Create your models here.
 
@@ -8,5 +8,5 @@ class Work(models.Models):
     
     application_description = models.TextField(max_length=400,default="",blank=True,null=False)
     
-    http_regix = RegexValidator(regex=r"https?://[\w!?/+\-_~;:.,*&@#$%()'[\]]+")
+    http_regix = URLValidator(schemes=['http','https'])
     application_picture_url = models.CharField(max_length=200,default="",blank=True,null=False,validators=[http_regix])
