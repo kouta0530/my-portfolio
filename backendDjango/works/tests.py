@@ -19,3 +19,7 @@ class WorkApiTest(TestCase):
   def test_application_description_label(self):
     work = Work.objects.get(pk=1)
     self.assertEquals(work._meta.get_field('application_description').verbose_name,'application description')
+
+  def test_application_picture_url_label(self):
+    work = Work.objects.get(pk=1)
+    self.assertEquals(work._meta.get_field('application_picture_url').verbose_name,'application picture url')
