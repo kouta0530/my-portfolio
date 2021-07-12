@@ -15,10 +15,13 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Work',
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('id', models.BigAutoField(auto_created=True,
+                                           primary_key=True, serialize=False, verbose_name='ID')),
                 ('application_name', models.CharField(max_length=30)),
-                ('application_description', models.TextField(blank=True, default='', max_length=400)),
-                ('application_picture_url', models.CharField(blank=True, default='', max_length=200, validators=[django.core.validators.URLValidator(schemes=['http', 'https'])])),
+                ('application_description', models.TextField(
+                    blank=True, default='', max_length=400)),
+                ('application_picture_url', models.CharField(blank=True, default='', max_length=200,
+                                                             validators=[django.core.validators.URLValidator(schemes=['http', 'https'])])),
             ],
         ),
     ]
