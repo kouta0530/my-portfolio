@@ -1,4 +1,5 @@
 from django.test import TestCase
+from django.core.exceptions import ValidationError
 from .models import Work
 
 # Create your tests here.
@@ -23,3 +24,7 @@ class WorkApiTest(TestCase):
   def test_application_picture_url_label(self):
     work = Work.objects.get(pk=1)
     self.assertEquals(work._meta.get_field('application_picture_url').verbose_name,'application picture url')
+
+  def test_application_picture_url_validation_error(self):
+    work = Work(application_name="butUrlApplication",application_picture_url="test")
+    self.assertRaises(ValidationError,work.full_clean)
