@@ -33,3 +33,8 @@ class WorkApiTest(TestCase):
         work = Work(application_name="butUrlApplication",
                     application_picture_url="test")
         self.assertRaises(ValidationError, work.full_clean)
+
+    def test_application_name_max_length(self):
+        work = Work.objects.get(pk=1)
+        self.assertEquals(work._meta.get_field(
+            'application_name').max_length, 30)
