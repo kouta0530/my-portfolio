@@ -48,3 +48,7 @@ class WorkApiTest(TestCase):
         work = Work.objects.get(pk=1)
         self.assertEquals(work._meta.get_field(
             'application_picture_url').max_length, 200)
+
+    def test_application_description_default(self):
+        no_description_text_work = Work.objects.create(application_name="test")
+        self.assertEquals(no_description_text_work.application_description, "")
