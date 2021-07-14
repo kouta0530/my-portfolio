@@ -38,3 +38,8 @@ class WorkApiTest(TestCase):
         work = Work.objects.get(pk=1)
         self.assertEquals(work._meta.get_field(
             'application_name').max_length, 30)
+
+    def test_application_description_max_length(self):
+        work = Work.objects.get(pk=1)
+        self.assertEquals(work._meta.get_field(
+            'application_description').max_length, 400)
