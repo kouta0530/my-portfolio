@@ -52,3 +52,8 @@ class WorkApiTest(TestCase):
     def test_application_description_default(self):
         no_description_text_work = Work.objects.create(application_name="test")
         self.assertEqual(no_description_text_work.application_description, "")
+
+    def test_application_picture_url_default(self):
+        no_picuture_url_work = Work.objects.create(
+            application_name="no picture url")
+        self.assertEqual(no_picuture_url_work.application_picture_url, "")
