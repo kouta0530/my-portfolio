@@ -73,3 +73,9 @@ class WorkApiTest(TestCase):
         contents_url = WorkOption.objects.get(
             pk=1)._meta.get_field('contents_url')
         self.assertEqual(contents_url.verbose_name, 'contents url')
+
+    def test_work_option_icon_image_path_label(self):
+        icon_image_path = WorkOption.objects.get(
+            pk=1)._meta.get_field('icon_image_path')
+
+        self.assertEqual(icon_image_path.verbose_name, 'icon image path')
