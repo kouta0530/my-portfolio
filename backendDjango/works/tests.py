@@ -1,17 +1,23 @@
 from django.test import TestCase
 from django.core.exceptions import ValidationError
-from .models import Work
-
+from .models import Work, WorkOption
 # Create your tests here.
 
 
 class WorkApiTest(TestCase):
     @classmethod
     def setUpTestData(cls):
-        Work.objects.create(
+        work = Work.objects.create(
             application_name="testApplication",
             application_description="eeeeeeeeeeeeeeeeeeeeeeeee",
             application_picture_url="https://example.com"
+        )
+
+        WorkOption.objects.create(
+            work=work,
+            icon_name="test icon",
+            contents_url="https://github.com",
+            icon_image_path="./logo192.png"
         )
 
     def test_application_name_label(self):
@@ -57,3 +63,8 @@ class WorkApiTest(TestCase):
         no_picuture_url_work = Work.objects.create(
             application_name="no picture url")
         self.assertEqual(no_picuture_url_work.application_picture_url, "")
+
+    def test_work_option_icon_name_label(self):
+        work_option = WorkOption.objects.get(pk=1)
+        self.assertEqual(work_option._meta.get_field(
+            'icon_name').verbose_name, 'icon name')
