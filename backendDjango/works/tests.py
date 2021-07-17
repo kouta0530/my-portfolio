@@ -79,3 +79,13 @@ class WorkApiTest(TestCase):
             pk=1)._meta.get_field('icon_image_path')
 
         self.assertEqual(icon_image_path.verbose_name, 'icon image path')
+
+    def test_icon_name_max_length(self):
+        icon_name = WorkOption.objects.get(pk=1)._meta.get_field('icon_name')
+        self.assertEqual(icon_name.max_length, 30)
+
+    def test_icon_image_path_max_length(self):
+        icon_image_path = WorkOption.objects.get(
+            pk=1)._meta.get_field('icon_image_path')
+
+        self.assertEqual(icon_image_path.max_length, 200)
