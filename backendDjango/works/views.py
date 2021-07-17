@@ -25,4 +25,4 @@ def get_portfolio_work(request, id):
 
 def get_portfolio_work_for_application_name(request, name):
     work = Work.objects.filter(application_name=name).values()
-    return HttpResponse(json(work, indent=2, ensucre_ascii=False), content_type='application/json')
+    return HttpResponse(json.dumps(work[0], indent=2, ensure_ascii=False), content_type='application/json')
