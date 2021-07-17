@@ -16,9 +16,11 @@ def helper_merge_work_and_options(query_set_of_work_models, query_set_of_work_op
 
 
 def get_portfolio_works(request):
-    works = Work.objects.all().values()
+    works = Work.objects.all()
+    res = list(map(lambda w: helper_merge_work_and_options(
+        w, w.application_options), works))
 
-    return HttpResponse(json.dumps(list(works), indent=2, ensure_ascii=False), content_type='application/json')
+    return HttpResponse(json.dumps(res, indent=2, ensure_ascii=False), content_type='application/json')
 
 
 def get_portfolio_work(request, id):
