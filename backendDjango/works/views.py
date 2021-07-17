@@ -13,8 +13,14 @@ def get_portfolio_works(request):
 
 
 def get_portfolio_work(request, id):
-    work = Work.objects.filter(pk=id).values()
-    return HttpResponse(json(work[0], indent=2, ensure_ascii=False), content_type='application/json')
+    work = Work.objects.prefetch_related('application_options').filter(pk=id)
+    res = work.values('application_name',
+                      'application_description', 'application_picture_url')[0]
+
+    res['application_options'] = list(
+        work[0].application_options.values('icon_name', 'contents_url', 'icon_image_path'))
+
+    return HttpResponse(json.dumps(res, indent=2, ensure_ascii=False), content_type='application/json')
 
 
 def get_portfolio_work_for_application_name(request, name):
