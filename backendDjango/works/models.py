@@ -15,7 +15,8 @@ class Work(models.Model):
 
 
 class WorkOption(models.Model):
-    work = models.ForeignKey(Work, on_delete=models.CASCADE)
+    work = models.ForeignKey(
+        Work, on_delete=models.CASCADE, related_name="application_options")
     icon_name = models.CharField(max_length=30)
     contents_url = models.TextField(
         max_length=2000, validators=[URLValidator()])
