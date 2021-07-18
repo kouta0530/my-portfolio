@@ -89,3 +89,14 @@ class WorkApiTest(TestCase):
             pk=1)._meta.get_field('icon_image_path')
 
         self.assertEqual(icon_image_path.max_length, 200)
+
+    def test_contents_url_validator(self):
+        worng_content_url_work_option = WorkOption(
+            work_id=1,
+            icon_name="test",
+            contents_url="test",
+            icon_image_path="./test.png"
+        )
+
+        with self.assertRaisesMessage(ValidationError, 'Enter a valid URL.'):
+            worng_content_url_work_option.full_clean()
