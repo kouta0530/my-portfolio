@@ -100,3 +100,7 @@ class WorkApiTest(TestCase):
 
         with self.assertRaisesMessage(ValidationError, 'Enter a valid URL.'):
             worng_content_url_work_option.full_clean()
+
+    def test_get_parent_model_from_child(self):
+        child = WorkOption.objects.select_related().get(pk=1)
+        self.assertEqual(child.work, Work.objects.get(pk=1))
