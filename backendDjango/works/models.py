@@ -21,6 +21,6 @@ class WorkOption(models.Model):
     contents_url = models.TextField(
         max_length=2000, validators=[URLValidator()])
 
-    image_validator = RegexValidator(r'^./[/.*/]*.+.[png|jpg]$')
+    image_validator = RegexValidator(r'^\./[/.*/]*.+\.png|jpg$')
     icon_image_path = models.CharField(
         max_length=200, validators=[image_validator])
