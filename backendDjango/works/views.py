@@ -16,7 +16,7 @@ def helper_merge_work_and_options(query_set_of_work_models, query_set_of_work_op
 
 
 def get_portfolio_works(request):
-    works = Work.objects.all()
+    works = Work.objects.prefetch_related('application_options').all()
     res = list(map(lambda w: helper_merge_work_and_options(
         w, w.application_options), works))
 
