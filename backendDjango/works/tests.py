@@ -1,6 +1,8 @@
 from django.test import TestCase
 from django.core.exceptions import ValidationError
 from .models import Work, WorkOption
+from .views import helper_merge_work_and_options
+import json
 # Create your tests here.
 
 
@@ -111,3 +113,15 @@ class WorkApiTest(TestCase):
     def test_get_parent_model_from_child(self):
         child = WorkOption.objects.select_related().get(pk=1)
         self.assertEqual(child.work, Work.objects.get(pk=1))
+
+    def test_can_get_works_response(self):
+        res = self.client.get('/v1/works/')
+        self.assertEqual(res.status_code, 200)
+
+        data = json.loads(res.content)
+        self.assertEqual(len(data), Work.objects.all().count())
+
+        work = Work.objects.get(pk=1)
+        options = WorkOption.objects.filter(work_id=1)
+
+        self.assertEqual(data[0], helper_merge_work_and_options(work, options))
