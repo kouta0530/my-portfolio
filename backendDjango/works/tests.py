@@ -126,3 +126,13 @@ class WorkApiTest(TestCase):
         for i, w in enumerate(work):
             self.assertEqual(
                 data[i], helper_merge_work_and_options(w, w.application_options))
+
+    def test_can_get_work_response_for_id(self):
+        res = self.client.get('/v1/works/1')
+        self.assertEqual(res.status_code, 200)
+
+        data = json.loads(res.content)
+        work = Work.objects.prefetch_related('application_options').get(pk=1)
+        options = work.application_options.values()
+
+        self.assertEqual(data, helper_merge_work_and_options(work, options))
