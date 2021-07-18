@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http.response import HttpResponse
 from .models import Work, WorkOption
+from django.db.models import Prefetch
 import json
 
 # Create your views here.
@@ -16,7 +17,7 @@ def helper_merge_work_and_options(query_set_of_work_models, query_set_of_work_op
 
 
 def get_portfolio_works(request):
-    works = Work.objects.prefetch_related('application_options').all()
+    works = Work.objects.prefetch_related(Prefetch('application_options'))
     res = list(map(lambda w: helper_merge_work_and_options(
         w, w.application_options), works))
 
@@ -24,7 +25,8 @@ def get_portfolio_works(request):
 
 
 def get_portfolio_work(request, id):
-    work = Work.objects.prefetch_related('application_options').filter(pk=id)
+    work = Work.objects.prefetch_related(
+        Prefetch('application_options', queryset=WorkOption.objects.filter(work_id=id)))
     res = helper_merge_work_and_options(work[0], work[0].application_options)
 
     return HttpResponse(json.dumps(res, indent=2, ensure_ascii=False), content_type='application/json')
