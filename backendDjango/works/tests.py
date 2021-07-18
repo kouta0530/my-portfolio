@@ -121,7 +121,8 @@ class WorkApiTest(TestCase):
         data = json.loads(res.content)
         self.assertEqual(len(data), Work.objects.all().count())
 
-        work = Work.objects.get(pk=1)
-        options = WorkOption.objects.filter(work_id=1)
+        work = Work.objects.prefetch_related('application_options')
 
-        self.assertEqual(data[0], helper_merge_work_and_options(work, options))
+        for i, w in enumerate(work):
+            self.assertEqual(
+                data[i], helper_merge_work_and_options(w, w.application_options))
