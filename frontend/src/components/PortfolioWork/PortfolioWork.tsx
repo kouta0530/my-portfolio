@@ -10,14 +10,14 @@ export interface WorkProp {
   applicationOptions?: IconParameter[]
 }
 
-export const PortfolioWork:React.FC<WorkProp> = ({...props}) => {
+export const PortfolioWork: React.FC<WorkProp> = ({...props}) => {
   return (
     <>
       <Card className="application-card">
         <CardHeader title={props.applicationName}/>
         <CardMedia 
           component="img"
-          image={props.applicationPictureUrl}
+          image={props.applicationPictureUrl ? props.applicationPictureUrl : 'no_image.png'}
           title={props.applicationName}
           className="application-card-media"
         />
