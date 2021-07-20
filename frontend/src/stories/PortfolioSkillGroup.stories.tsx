@@ -1,6 +1,5 @@
 import { Story, Meta } from '@storybook/react';
 import { PortfolioSkillGroup, SkillGroupProp } from '../components/PortfolioSkillGroup/PortfolioSkillGroup';
-import { ManyStars } from './PortfolioSkill.stories';
 
 export default {
   title: 'Example/PortfolioSkillGroup',
