@@ -1,7 +1,5 @@
 import { Story, Meta } from '@storybook/react';
 import { PortfolioProfile, ProfileProps } from '../components/PortfolioProfile/PortfolioProfile';
-import IconParameter from '../models/IconParameter';
-import HobbyParameter from '../models/HobbyParameter';
 
 export default {
   title: 'Example/PortfolioProfile',
