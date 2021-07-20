@@ -1,6 +1,5 @@
 from django.test import TestCase
 from django.core.exceptions import ValidationError
-from django.db.models import Prefetch
 from .models import Work, WorkOption
 from .views import helper_merge_work_and_options
 import json
@@ -125,8 +124,8 @@ class WorkApiTest(TestCase):
         work = Work.objects.prefetch_related('application_options')
 
         for i, w in enumerate(work):
-            self.assertEqual(
-                data[i], helper_merge_work_and_options(w, w.application_options))
+            self.assertEqual(data[i], helper_merge_work_and_options(
+                w, w.application_options))
 
     def test_can_get_work_response_for_id(self):
         res = self.client.get('/v1/works/1')

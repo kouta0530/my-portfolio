@@ -11,7 +11,8 @@ class Work(models.Model):
 
     http_regix = URLValidator(schemes=['http', 'https'])
     application_picture_url = models.CharField(
-        max_length=200, default="", blank=True, null=False, validators=[http_regix])
+        max_length=200, default="", blank=True, null=False,
+        validators=[http_regix])
 
 
 class WorkOption(models.Model):
