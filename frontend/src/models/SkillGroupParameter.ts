@@ -1,4 +1,4 @@
-import SkillParameter from "./SkillParameter";
+import SkillParameter from './SkillParameter';
 
 export default interface SkillGroupParameter {
   skillTypesKey: string;

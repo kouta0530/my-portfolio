@@ -1,23 +1,20 @@
-import { Story, Meta } from "@storybook/react";
-import {
-  PortfolioProfile,
-  ProfileProps,
-} from "../components/PortfolioProfile/PortfolioProfile";
-import IconParameter from "../models/IconParameter";
-import HobbyParameter from "../models/HobbyParameter";
+import { Story, Meta } from '@storybook/react';
+import { PortfolioProfile, ProfileProps } from '../components/PortfolioProfile/PortfolioProfile';
+import IconParameter from '../models/IconParameter';
+import HobbyParameter from '../models/HobbyParameter';
 
 export default {
-  title: "Example/PortfolioProfile",
+  title: 'Example/PortfolioProfile',
   component: PortfolioProfile,
   argTypes: {
     myPicture: {
-      control: "object",
+      control: 'object',
     },
     myName: {
-      control: "text",
+      control: 'text',
     },
     myHobbyList: {
-      control: "array",
+      control: 'array',
     },
   },
 } as Meta;
@@ -28,19 +25,19 @@ export const Default = Template.bind({});
 
 Default.args = {
   myPicture: {
-    iconImagePath: "logo192.png",
-    iconName: "saki",
-    contentUrl: "",
+    iconImagePath: 'logo192.png',
+    iconName: 'saki',
+    contentUrl: '',
   },
-  myName: "Saki",
+  myName: 'Saki',
   myHobbyList: [
     {
-      hobbyName: "カラオケ",
-      hobbiesExampleInformation: ["test", "テスト"],
+      hobbyName: 'カラオケ',
+      hobbiesExampleInformation: ['test', 'テスト'],
     },
     {
-      hobbyName: "将棋",
-      hobbiesExampleInformation: ["test"],
+      hobbyName: '将棋',
+      hobbiesExampleInformation: ['test'],
     },
   ],
 };
@@ -48,35 +45,35 @@ Default.args = {
 export const NoPictureAndNoHobby = Template.bind({});
 NoPictureAndNoHobby.args = {
   myPicture: {
-    iconImagePath: "",
-    iconName: "saki",
-    contentUrl: "",
+    iconImagePath: '',
+    iconName: 'saki',
+    contentUrl: '',
   },
-  myName: "saki",
+  myName: 'saki',
 };
 
 export const ManyInfo = Template.bind({});
 ManyInfo.args = {
-  myName: "saki",
+  myName: 'saki',
   myHobbyList: [
     {
-      hobbyName: "test1",
+      hobbyName: 'test1',
       hobbiesExampleInformation: [],
     },
     {
-      hobbyName: "test2",
+      hobbyName: 'test2',
       hobbiesExampleInformation: [],
     },
     {
-      hobbyName: "test3",
+      hobbyName: 'test3',
       hobbiesExampleInformation: [],
     },
     {
-      hobbyName: "test4",
+      hobbyName: 'test4',
       hobbiesExampleInformation: [],
     },
     {
-      hobbyName: "test5",
+      hobbyName: 'test5',
       hobbiesExampleInformation: [],
     },
   ],
@@ -84,21 +81,11 @@ ManyInfo.args = {
 
 export const ManyHobbiesExampleInfo = Template.bind({});
 ManyHobbiesExampleInfo.args = {
-  myName: "saki",
+  myName: 'saki',
   myHobbyList: [
     {
-      hobbyName: "test",
-      hobbiesExampleInformation: [
-        "test1",
-        "test2",
-        "test3",
-        "test4",
-        "test5",
-        "test6",
-        "test7",
-        "test8",
-        "test9",
-      ],
+      hobbyName: 'test',
+      hobbiesExampleInformation: ['test1', 'test2', 'test3', 'test4', 'test5', 'test6', 'test7', 'test8', 'test9'],
     },
   ],
 };

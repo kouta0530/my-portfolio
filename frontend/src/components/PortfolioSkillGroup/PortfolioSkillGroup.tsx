@@ -1,8 +1,8 @@
-import React from "react";
-import SkillParameter from "../../models/SkillParameter";
-import { PortfolioSkill } from "../PortfolioSkill/PortfolioSkill";
-import { Card, CardContent, Typography } from "@material-ui/core";
-import "./style.scss";
+import React from 'react';
+import SkillParameter from '../../models/SkillParameter';
+import { PortfolioSkill } from '../PortfolioSkill/PortfolioSkill';
+import { Card, CardContent, Typography } from '@material-ui/core';
+import './style.scss';
 
 export interface SkillGroupProp {
   skillTypes: string[];
@@ -16,11 +16,7 @@ export const PortfolioSkillGroup: React.FC<SkillGroupProp> = ({ ...props }) => {
         {props.skillTypes.map((skillType) => (
           <Card className="skill-group-card">
             <CardContent>
-              <Typography
-                component="p"
-                align="center"
-                className="skill-group-card-label"
-              >
+              <Typography component="p" align="center" className="skill-group-card-label">
                 {skillType}
               </Typography>
               {props.skillInformation
