@@ -2,7 +2,7 @@ import { Story, Meta } from '@storybook/react';
 import { PortfolioSkillGroup, SkillGroupProp } from '../components/PortfolioSkillGroup/PortfolioSkillGroup';
 
 export default {
-  title: 'Example/PortfolioSkillGroup',
+  title: 'Example/PortfolioSkill/PortfolioSkillGroup',
   component: PortfolioSkillGroup,
   argTypes: {},
 } as Meta;
