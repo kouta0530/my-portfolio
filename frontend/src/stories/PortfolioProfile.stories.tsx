@@ -1,5 +1,6 @@
 import { Story, Meta } from '@storybook/react';
 import { PortfolioProfile, ProfileProps } from '../components/PortfolioProfile/PortfolioProfile';
+import HobbyParameter from '../models/HobbyParameter';
 
 export default {
   title: 'Example/PortfolioProfile',
@@ -53,28 +54,10 @@ NoPictureAndNoHobby.args = {
 export const ManyInfo = Template.bind({});
 ManyInfo.args = {
   myName: 'saki',
-  myHobbyList: [
-    {
-      hobbyName: 'test1',
-      hobbiesExampleInformation: [],
-    },
-    {
-      hobbyName: 'test2',
-      hobbiesExampleInformation: [],
-    },
-    {
-      hobbyName: 'test3',
-      hobbiesExampleInformation: [],
-    },
-    {
-      hobbyName: 'test4',
-      hobbiesExampleInformation: [],
-    },
-    {
-      hobbyName: 'test5',
-      hobbiesExampleInformation: [],
-    },
-  ],
+  myHobbyList: new Array<HobbyParameter>(5).fill({
+    hobbyName: 'test',
+    hobbiesExampleInformation: [],
+  }),
 };
 
 export const ManyHobbiesExampleInfo = Template.bind({});
@@ -83,7 +66,9 @@ ManyHobbiesExampleInfo.args = {
   myHobbyList: [
     {
       hobbyName: 'test',
-      hobbiesExampleInformation: ['test1', 'test2', 'test3', 'test4', 'test5', 'test6', 'test7', 'test8', 'test9'],
+      hobbiesExampleInformation: new Array<string>(9)
+        .fill('test')
+        .map((value: string, idx: number) => value + (idx + 1)),
     },
   ],
 };
