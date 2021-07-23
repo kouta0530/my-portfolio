@@ -1,4 +1,4 @@
-import PortfolioMainPage from "./pages/PortfolioMainPage";
+import PortfolioMainPage from "./pages/PortfolioMainPage/PortfolioMainPage";
 import "./App.scss";
 
 export function App() {
