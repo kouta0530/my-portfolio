@@ -12,7 +12,7 @@ const createMockSkillInformation = (label: string, stars: number, type: string):
   return {
     skillLabel: label,
     skilledStars: stars,
-    type: type,
+    skillType: type,
   };
 };
 

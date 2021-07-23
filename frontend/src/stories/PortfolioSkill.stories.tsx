@@ -14,7 +14,7 @@ Default.args = {
   skillInformation: {
     skillLabel: 'testLabel',
     skilledStars: 3,
-    type: 'test',
+    skillType: 'test',
   },
 };
 
@@ -23,7 +23,7 @@ ManyStars.args = {
   skillInformation: {
     skillLabel: 'manyStars',
     skilledStars: 100,
-    type: 'test',
+    skillType: 'test',
   },
 };
 
@@ -33,6 +33,6 @@ LongLabel.args = {
     skillLabel:
       'veryveryveryveryveryveryveryveryveryveryveryveryveryveryveryverylongveryveryveryveryveryveryveryveryveryveryveryveryveryveryveryverylongLabel',
     skilledStars: 3,
-    type: 'test',
+    skillType: 'test',
   },
 };
