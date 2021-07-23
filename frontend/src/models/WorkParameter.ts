@@ -1,8 +1,8 @@
-import IconParameter from "./IconParameter";
+import IconParameter from './IconParameter';
 
 export interface WorkParameter {
-  applicationName: string
-  applicationPictureUrl?: string
-  applicationDescription?: string
-  applicationIcon?: IconParameter[]
+  applicationName: string;
+  applicationPictureUrl?: string;
+  applicationDescription?: string;
+  applicationIcon?: IconParameter[];
 }

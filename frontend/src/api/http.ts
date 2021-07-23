@@ -1,12 +1,12 @@
-import axios from "axios";
+import axios from 'axios';
 
 axios.create({
-  baseURL: "",
+  baseURL: '',
   headers: {
-    "Content-Type": "application/json",
-    "X-Requested-With": "XMLHttpRequest",
+    'Content-Type': 'application/json',
+    'X-Requested-With': 'XMLHttpRequest',
   },
-  responseType: "json",
+  responseType: 'json',
 });
 
 export const get = <T>(url: string, options?: any) => {

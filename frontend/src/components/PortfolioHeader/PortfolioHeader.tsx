@@ -1,9 +1,9 @@
-import React from "react";
-import AppBar from "@material-ui/core/AppBar";
-import Toolbar from "@material-ui/core/Toolbar";
-import Typography from "@material-ui/core/Typography";
-import NavigationElement from "../../models/NavigationElement";
-import "./style.scss";
+import React from 'react';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import Typography from '@material-ui/core/Typography';
+import NavigationElement from '../../models/NavigationElement';
+import './style.scss';
 
 export interface HeaderProps {
   headerTitle: string;

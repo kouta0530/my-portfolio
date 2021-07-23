@@ -1,5 +1,4 @@
 from django.test import TestCase
-from django.urls import reverse
 from .models import Skill
 
 # Create your tests here.
@@ -70,5 +69,6 @@ class SkillsApiTest(TestCase):
 
     def test_get_skill_catecory_distinct(self):
         skill_category = list(map(
-            lambda x: x['skill_type'], Skill.objects.values('skill_type').distinct()))
+            lambda x: x['skill_type'],
+            Skill.objects.values('skill_type').distinct()))
         self.assertEqual(skill_category, ['バックエンド', 'フロントエンド'])

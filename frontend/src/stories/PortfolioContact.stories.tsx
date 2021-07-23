@@ -1,17 +1,17 @@
-import { Story, Meta } from "@storybook/react";
-import PortfolioContact from "../components/PortfolioContact/PortfolioContact";
-import IconParameter from "../models/IconParameter";
+import { Story, Meta } from '@storybook/react';
+import PortfolioContact from '../components/PortfolioContact/PortfolioContact';
+import IconParameter from '../models/IconParameter';
 
 export default {
-  title: "Example/PortfolioContact",
+  title: 'Example/PortfolioContact',
   component: PortfolioContact,
   argTypes: {
-    contactHeaderTitle: { control: "text" },
+    contactHeaderTitle: { control: 'text' },
     contentIcons: {
-      types: "array",
+      types: 'array',
     },
     contentText: {
-      control: "array",
+      control: 'array',
     },
   },
 } as Meta;
@@ -24,33 +24,31 @@ type ContactPrams = {
 
 const mockContentIcons = [
   {
-    iconName: "test",
-    contentUrl: "https://github.com/kouta0530",
-    iconImagePath: "./logo192.png",
+    iconName: 'test',
+    contentUrl: 'https://github.com/kouta0530',
+    iconImagePath: './logo192.png',
   },
   {
-    iconName: "test2",
-    contentUrl: "",
-    iconImagePath: "./logo192.png",
+    iconName: 'test2',
+    contentUrl: '',
+    iconImagePath: './logo192.png',
   },
 ];
 
-const mockContentText = ["test@example.com"];
+const mockContentText = ['test@example.com'];
 
-const Template: Story<ContactPrams> = (args) => (
-  <PortfolioContact {...args}> /</PortfolioContact>
-);
+const Template: Story<ContactPrams> = (args) => <PortfolioContact {...args}> /</PortfolioContact>;
 
 export const Default = Template.bind({});
 Default.args = {
-  contactHeaderTitle: "TestContactTitle",
+  contactHeaderTitle: 'TestContactTitle',
   contentIcons: mockContentIcons,
   contentText: mockContentText,
 };
 
 export const Title = Template.bind({});
 Title.args = {
-  contactHeaderTitle: "TestContactTitle",
+  contactHeaderTitle: 'TestContactTitle',
   contentIcons: [],
   contentText: [],
 };

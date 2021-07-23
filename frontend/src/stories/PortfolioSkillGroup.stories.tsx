@@ -1,57 +1,40 @@
-import { Story, Meta } from "@storybook/react";
-import {
-  PortfolioSkillGroup,
-  SkillGroupProp,
-} from "../components/PortfolioSkillGroup/PortfolioSkillGroup";
-import { ManyStars } from "./PortfolioSkill.stories";
+import { Story, Meta } from '@storybook/react';
+import { PortfolioSkillGroup, SkillGroupProp } from '../components/PortfolioSkillGroup/PortfolioSkillGroup';
+import SkillParameter from '../models/SkillParameter';
 
 export default {
-  title: "Example/PortfolioSkillGroup",
+  title: 'Example/PortfolioSkill/PortfolioSkillGroup',
   component: PortfolioSkillGroup,
   argTypes: {},
 } as Meta;
 
+const createMockSkillInformation = (label: string, stars: number, type: string): SkillParameter => {
+  return {
+    skillLabel: label,
+    skilledStars: stars,
+    type: type,
+  };
+};
+
 const mockSkillGroupData = {
-  skillTypes: ["フロントエンド", "バックエンド"],
+  skillTypes: ['フロントエンド', 'バックエンド'],
   skillInformation: [
-    {
-      skillLabel: "Vue.js",
-      skilledStars: 3,
-      type: "フロントエンド",
-    },
-    {
-      skillLabel: "React.js",
-      skilledStars: 3,
-      type: "フロントエンド",
-    },
-    {
-      skillLabel: "Python",
-      skilledStars: 3,
-      type: "バックエンド",
-    },
+    createMockSkillInformation('Vue.js', 3, 'フロントエンド'),
+    createMockSkillInformation('React.js', 3, 'フロントエンド'),
+    createMockSkillInformation('Python', 3, 'バックエンド'),
   ],
 };
 
 const manyKindsMockData = {
-  skillTypes: [...mockSkillGroupData.skillTypes, "ミドルウェア", "その他"],
+  skillTypes: [...mockSkillGroupData.skillTypes, 'ミドルウェア', 'その他'],
   skillInformation: [
     ...mockSkillGroupData.skillInformation,
-    {
-      skillLabel: "Apache",
-      skilledStars: 2,
-      type: "ミドルウェア",
-    },
-    {
-      skillLabel: "TOEIC",
-      skilledStars: 3,
-      type: "その他",
-    },
+    createMockSkillInformation('Apache', 2, 'ミドルウェア'),
+    createMockSkillInformation('TOEIC', 3, 'その他'),
   ],
 };
 
-const Template: Story<SkillGroupProp> = (args) => (
-  <PortfolioSkillGroup {...args} />
-);
+const Template: Story<SkillGroupProp> = (args) => <PortfolioSkillGroup {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
@@ -64,39 +47,19 @@ ManyKindsSkills.args = { ...manyKindsMockData };
 export const DiffrentLengthLabel = Template.bind({});
 
 DiffrentLengthLabel.args = {
-  skillTypes: ["test"],
+  skillTypes: ['test'],
   skillInformation: [
-    {
-      skillLabel: "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-      skilledStars: 2,
-      type: "test",
-    },
-    {
-      skillLabel: "eeeee",
-      skilledStars: 2,
-      type: "test",
-    },
-    {
-      skillLabel: "あああああああああああああああああああああああああ",
-      skilledStars: 2,
-      type: "test",
-    },
+    createMockSkillInformation('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', 2, 'test'),
+    createMockSkillInformation('eeeee', 2, 'test'),
+    createMockSkillInformation('あああああああああああああああああああああああああ', 2, 'test'),
   ],
 };
 
 export const ManyStarsCardView = Template.bind({});
 ManyStarsCardView.args = {
-  skillTypes: ["test"],
+  skillTypes: ['test'],
   skillInformation: [
-    {
-      skillLabel: "manyStars",
-      skilledStars: 30,
-      type: "test",
-    },
-    {
-      skillLabel: "eeeee",
-      skilledStars: 2,
-      type: "test",
-    },
+    createMockSkillInformation('manyStars', 30, 'test'),
+    createMockSkillInformation('eeeee', 2, 'test'),
   ],
 };
