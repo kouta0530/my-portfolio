@@ -1,9 +1,16 @@
 version: "3"
 services:
   web:
-    container_name: react-portfolio
+    container_name: frontend
     build:
-      context: .
+      context: frontend
       dockerfile: Dockerfile
     ports:
       - 3000:3000
+  backend:
+    container_name: backend
+    build:
+      context: backendDjango
+      dockerfile: Dockerfile
+    ports:
+      - 8001:8000
