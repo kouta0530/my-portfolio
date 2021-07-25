@@ -12,7 +12,7 @@ const request = axios.create({
 
 export const get = <T>(url: string, options?: any) => {
   const data = request.get<T>(url, options).then(
-    (res) => camelcaseKeys(res.data),
+    (res) => camelcaseKeys(res.data, { deep: true }),
     (err) => {
       console.log(err);
     }
