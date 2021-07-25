@@ -4,6 +4,7 @@ import { PortfolioProfile } from '../../components/PortfolioProfile/PortfolioPro
 import { PortfolioSkillGroup } from '../../components/PortfolioSkillGroup/PortfolioSkillGroup';
 import { PortfolioWorkGroup } from '../../components/PortfolioWorkGroup/PortfolioWorkGroup';
 import PortfolioContact from '../../components/PortfolioContact/PortfolioContact';
+import { Typography } from '@material-ui/core';
 import './style.scss';
 import { getPortfolioSkillList } from '../../api/portfolioSkillsAPI';
 import SkillParameter from '../../models/SkillParameter';
@@ -46,7 +47,7 @@ export default class PortfolioMainPage extends React.Component<{}, any> {
         </header>
         <div className="container">
           <div>
-            <h2>Profile</h2>
+            <Typography variant="h4">Profile</Typography>
             <PortfolioProfile
               myName="saki"
               myPicture={{
@@ -63,11 +64,11 @@ export default class PortfolioMainPage extends React.Component<{}, any> {
             />
           </div>
           <div>
-            <h2>Skill</h2>
+            <Typography variant="h4">Skill</Typography>
             <PortfolioSkillGroup skillTypes={this.state.skillTypes} skillInformation={this.state.skills} />
           </div>
           <div>
-            <h2>Works</h2>
+            <Typography variant="h4">Works</Typography>
             <PortfolioWorkGroup applications={this.state.works} />
           </div>
           <div>
