@@ -4,5 +4,5 @@ export interface WorkParameter {
   applicationName: string;
   applicationPictureUrl?: string;
   applicationDescription?: string;
-  applicationIcon?: IconParameter[];
+  applicationOptions?: IconParameter[];
 }
