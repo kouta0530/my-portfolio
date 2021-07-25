@@ -3,6 +3,7 @@ import { PortfolioHeader } from '../../components/PortfolioHeader/PortfolioHeade
 import { PortfolioProfile } from '../../components/PortfolioProfile/PortfolioProfile';
 import { PortfolioSkillGroup } from '../../components/PortfolioSkillGroup/PortfolioSkillGroup';
 import { PortfolioWorkGroup } from '../../components/PortfolioWorkGroup/PortfolioWorkGroup';
+import PortfolioContact from '../../components/PortfolioContact/PortfolioContact';
 import './style.scss';
 import { getPortfolioSkillList } from '../../api/portfolioSkillsAPI';
 import SkillParameter from '../../models/SkillParameter';
@@ -68,6 +69,19 @@ export default class PortfolioMainPage extends React.Component<{}, any> {
           <div>
             <h2>Works</h2>
             <PortfolioWorkGroup applications={this.state.works} />
+          </div>
+          <div>
+            <PortfolioContact
+              contactHeaderTitle="contact"
+              contentIcons={[
+                {
+                  iconName: 'github',
+                  iconImagePath: 'GitHub-Mark-64px.png',
+                  contentUrl: 'https://github.com/kouta0530',
+                },
+              ]}
+              contentText={['contentText']}
+            />
           </div>
         </div>
       </>
