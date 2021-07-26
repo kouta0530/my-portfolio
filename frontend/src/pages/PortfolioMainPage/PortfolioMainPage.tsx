@@ -40,14 +40,16 @@ export default class PortfolioMainPage extends React.Component<{}, any> {
             navigationElements={[
               { elementName: 'profile', elementUrl: '' },
               { elementName: 'skill', elementUrl: '' },
-              { elementName: 'work', elementUrl: '' },
+              { elementName: 'works', elementUrl: '' },
               { elementName: 'contact', elementUrl: '' },
             ]}
           />
         </header>
         <div className="container">
           <div>
-            <Typography variant="h4">Profile</Typography>
+            <Typography id="profile" variant="h4">
+              Profile
+            </Typography>
             <PortfolioProfile
               myName="saki"
               myPicture={{
@@ -64,14 +66,18 @@ export default class PortfolioMainPage extends React.Component<{}, any> {
             />
           </div>
           <div>
-            <Typography variant="h4">Skill</Typography>
+            <Typography id="skill" variant="h4">
+              Skill
+            </Typography>
             <PortfolioSkillGroup skillTypes={this.state.skillTypes} skillInformation={this.state.skills} />
           </div>
           <div>
-            <Typography variant="h4">Works</Typography>
+            <Typography id="works" variant="h4">
+              Works
+            </Typography>
             <PortfolioWorkGroup applications={this.state.works} />
           </div>
-          <div>
+          <div id="contact">
             <PortfolioContact
               contactHeaderTitle="contact"
               contentIcons={[
