@@ -10,13 +10,14 @@ import { getPortfolioSkillList } from '../../api/portfolioSkillsAPI';
 import SkillParameter from '../../models/SkillParameter';
 import { getPortfolioWorks } from '../../api/portfolioWorksAPI';
 import { WorkParameter } from '../../models/WorkParameter';
+import { MainPageStateParameter } from '../../models/MainPageStateParameter';
 
-export default class PortfolioMainPage extends React.Component<{}, any> {
+export default class PortfolioMainPage extends React.Component<{}, MainPageStateParameter> {
   constructor(props: {}) {
     super(props);
     this.state = {
       skills: new Array<SkillParameter>(0),
-      skillTypes: new Array<String>(0),
+      skillTypes: new Array<string>(0),
       works: new Array<WorkParameter>(0),
     };
   }
@@ -28,7 +29,9 @@ export default class PortfolioMainPage extends React.Component<{}, any> {
     }
 
     const works = await getPortfolioWorks();
-    this.setState({ works: works });
+    if (typeof works === 'object') {
+      this.setState({ works: works });
+    }
   }
 
   render() {
