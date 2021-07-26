@@ -9,10 +9,10 @@ class Work(models.Model):
     application_description = models.TextField(
         max_length=400, default="", blank=True, null=False)
 
-    http_regix = URLValidator(schemes=['http', 'https'])
+    image_validator = RegexValidator(r'^\./[/.*/]*.+\.png|jpg$')
     application_picture_url = models.CharField(
         max_length=200, default="", blank=True, null=False,
-        validators=[http_regix])
+        validators=[image_validator])
 
 
 class WorkOption(models.Model):
