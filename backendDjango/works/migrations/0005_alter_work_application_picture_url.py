@@ -14,6 +14,9 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='work',
             name='application_picture_url',
-            field=models.CharField(blank=True, default='', max_length=200, validators=[django.core.validators.RegexValidator('^\\./[/.*/]*.+\\.png|jpg$')]),
+            field=models.CharField(blank=True, default='', max_length=200,
+                                   validators=[
+                                       django.core.validators.RegexValidator(
+                                           '^\\./[/.*/]*.+\\.png|jpg$')]),
         ),
     ]
