@@ -58,7 +58,7 @@ export default class PortfolioMainPage extends React.Component<{}, MainPageState
               myPicture={{
                 iconName: 'mypicture',
                 contentUrl: '',
-                iconImagePath: '',
+                iconImagePath: process.env.REACT_APP_PROFILE_SRC ? process.env.REACT_APP_PROFILE_SRC : '',
               }}
               myHobbyList={[
                 {
@@ -90,7 +90,7 @@ export default class PortfolioMainPage extends React.Component<{}, MainPageState
                   contentUrl: 'https://github.com/kouta0530',
                 },
               ]}
-              contentText={['contentText']}
+              contentText={[process.env.REACT_APP_CONTACT_MAIL ? process.env.REACT_APP_CONTACT_MAIL : '']}
             />
           </div>
         </div>
