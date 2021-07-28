@@ -88,8 +88,12 @@ WSGI_APPLICATION = 'backendDjango.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': settings_local.DATABASE_NAME,  # 　作成したデータベース名
+        'USER': settings_local.DATABASE_USER,  # ログインユーザー名
+        'HOST': settings_local.DATABASE_HOST,
+        'PASSWORD': settings_local.DATABASE_PASSWORD,
+        'PORT': settings_local.DATABASE_PORT,
     }
 }
 
