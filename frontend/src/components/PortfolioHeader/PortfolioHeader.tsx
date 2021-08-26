@@ -3,6 +3,7 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import NavigationElement from '../../models/NavigationElement';
+import { Link as Scroll } from 'react-scroll';
 import './style.scss';
 
 export interface HeaderProps {
@@ -21,7 +22,11 @@ export class PortfolioHeader extends React.Component<HeaderProps> {
           <Toolbar>
             <ul>
               {this.props.navigationElements.map((e) => {
-                return <li>{e.elementName}</li>;
+                return (
+                  <Scroll to={e.elementName} smooth={true}>
+                    <li>{e.elementName}</li>
+                  </Scroll>
+                );
               })}
             </ul>
           </Toolbar>

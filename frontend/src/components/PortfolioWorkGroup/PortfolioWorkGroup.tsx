@@ -16,7 +16,7 @@ export const PortfolioWorkGroup: React.FC<WorkGroupProp> = ({ ...props }) => {
             applicationName={e.applicationName}
             applicationPictureUrl={e.applicationPictureUrl}
             applicationDescription={e.applicationDescription}
-            applicationOptions={e.applicationIcon}
+            applicationOptions={e.applicationOptions}
           />
         ))}
       </div>

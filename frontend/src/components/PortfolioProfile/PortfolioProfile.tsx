@@ -27,12 +27,13 @@ export const PortfolioProfile: React.FC<ProfileProps> = ({ ...props }) => {
   return (
     <>
       <div className="profile">
-        <div className="profile-avatar">
-          <Avatar src={props.myPicture?.iconImagePath} className={classes.large}></Avatar>
-        </div>
         <Paper className="profile-info">
-          <h3>{props.myName}</h3>
+          <div className="profile-avatar">
+            <Avatar src={props.myPicture?.iconImagePath} className={classes.large}></Avatar>
+          </div>
           <div>
+            <h3>{props.myName}</h3>
+            <h3>趣味</h3>
             {props.myHobbyList?.map((e) => (
               <>
                 <div>

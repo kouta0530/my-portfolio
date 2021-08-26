@@ -20,7 +20,7 @@ export const PortfolioSkillGroup: React.FC<SkillGroupProp> = ({ ...props }) => {
                 {skillType}
               </Typography>
               {props.skillInformation
-                .filter((skill) => skill.type === skillType)
+                .filter((skill) => skill.skillType === skillType)
                 .map((s) => (
                   <PortfolioSkill skillInformation={s} />
                 ))}

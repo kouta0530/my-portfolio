@@ -1,8 +1,8 @@
-FROM node:lts-alpine
-RUN npm install -g create-react-app
+FROM node:12.19.0
 RUN mkdir my-portfolio
 WORKDIR /my-portfolio
+COPY ["package*.json", "yarn.lock" ,"./"]
+RUN yarn install --production --frozen-lockfile
 COPY . .
-RUN yarn install 
 EXPOSE 3000
 CMD ["yarn","start"]
